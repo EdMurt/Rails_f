@@ -1,4 +1,5 @@
-<%= form_for(@post) do |f| %>
+<%= tinymce %>
+<%= simple_form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -11,6 +12,15 @@
     </div>
   <% end %>
 
+<!-- CON SIMPLE FORM -->
+
+  <%= f.input :name %>
+  <%= f.input :title %>
+  <%= f.input :content, input_html: {class: "tinymce"} %>
+  <%= f.input :published %>
+  <%= f.button :submit %>
+
+<!-- SIN SIMPLE FORM
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -21,7 +31,7 @@
   </div>
   <div class="field">
     <%= f.label :content %><br />
-    <%= f.text_area :content %>
+    <%= f.text_area :content, class: "tinymce" %>
   </div>
   <div class="field">
     <%= f.label :published %> 
@@ -30,4 +40,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+-->
 <% end %>

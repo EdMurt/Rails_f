@@ -5,7 +5,7 @@
 
 <p>
   <b>Comment:</b>
-  <%= comment.body %>
+  <%= raw(comment.body) %>
 </p>
 <p>
   <%= link_to 'Destroy Comment', [comment.post, comment], 

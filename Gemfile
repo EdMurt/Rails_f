@@ -44,3 +44,11 @@ gem 'devise'
 
 # Interfaz de Administración de Rails
 gem 'rails_admin'
+
+#Editores
+gem 'bootstrap-wysiwyg-rails'
+
+gem 'tinymce-rails'
+
+#SimpleForm
+gem 'simple_form'
