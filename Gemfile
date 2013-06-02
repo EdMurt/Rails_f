@@ -52,3 +52,9 @@ gem 'tinymce-rails'
 
 #SimpleForm
 gem 'simple_form'
+
+#Twitter bootstrap
+gem 'twitter-bootstrap-rails'
+
+#Paginacion
+gem 'kaminari'

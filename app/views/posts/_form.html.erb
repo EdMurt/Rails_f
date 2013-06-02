@@ -1,44 +1,12 @@
 <%= tinymce %>
-<%= simple_form_for(@post) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-<!-- CON SIMPLE FORM -->
-
+<%= simple_form_for @post, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :name %>
   <%= f.input :title %>
-  <%= f.input :content, input_html: {class: "tinymce"} %>
+  <%= f.input :content, input_html: { class: "tinymce"} %>
   <%= f.input :published %>
-  <%= f.button :submit %>
-
-<!-- SIN SIMPLE FORM
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                posts_path, :class => 'btn' %>
   </div>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content, class: "tinymce" %>
-  </div>
-  <div class="field">
-    <%= f.label :published %> 
-    <%= f.check_box :published %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
--->
 <% end %>

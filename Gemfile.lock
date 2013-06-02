@@ -146,6 +146,10 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
+    twitter-bootstrap-rails (2.2.6)
+      actionpack (>= 3.1)
+      execjs
+      railties (>= 3.1)
     tzinfo (0.3.37)
     uglifier (2.1.0)
       execjs (>= 0.3.0)
@@ -161,6 +165,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails
+  kaminari
   railroady
   rails (= 3.2.13)
   rails_admin
@@ -168,4 +173,5 @@ DEPENDENCIES
   simple_form
   sqlite3
   tinymce-rails
+  twitter-bootstrap-rails
   uglifier (>= 1.0.3)

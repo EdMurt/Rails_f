@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.order("name").page(params[:page]).per(2)
+  #  @posts = Post.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +81,7 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  
+
 end
